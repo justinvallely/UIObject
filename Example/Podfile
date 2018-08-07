@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'UIObject_Example' do
+  pod 'UIObject', :path => '../'
+
+  target 'UIObject_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
