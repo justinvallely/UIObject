@@ -26,4 +26,4 @@ justinvallely, justin.vallely@ibotta.com
 
 ## License
 
-UIObject is available under the MIT license. See the LICENSE file for more info.
+UIObject is available under the Apache License 2.0. See the LICENSE file for more info.

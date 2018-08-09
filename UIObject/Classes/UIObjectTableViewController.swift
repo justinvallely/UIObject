@@ -8,12 +8,13 @@
 
 import UIKit
 
-public class UIObjectTableViewController: UITableViewController {
+open class UIObjectTableViewController: UIViewController {
 
-    public var uiObject: UIObject?
+    open var uiObject: UIObject!
+    open var tableView = UITableView()
 
     public init(uiObject: UIObject) {
-        super.init(style: .plain)
+        super.init(nibName: nil, bundle: nil)
         self.uiObject = uiObject
         self.tableView.separatorStyle = .none
         self.tableView.allowsSelection = false
@@ -25,30 +26,78 @@ public class UIObjectTableViewController: UITableViewController {
         assertionFailure("not implemented")
     }
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UIObjectTableViewCell.self, forCellReuseIdentifier: "UIObjectTableViewCell")
-        navigationItem.title = "\(uiObject!.self)"
+
+        configureNavBar()
+        configureTableView()
     }
 
-    // MARK: - Table view data source
+    private func configureNavBar() {
+        if isModal() {
+            let closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.stop, target: self, action: #selector(close))
+            navigationItem.leftBarButtonItem = closeButton
+        }
 
-    override public func numberOfSections(in tableView: UITableView) -> Int {
+        if let objectType = uiObject.self {
+            navigationItem.title = "\(objectType)"
+        }
+    }
+
+    private func configureTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UIObjectTableViewCell.self, forCellReuseIdentifier: "UIObjectTableViewCell")
+
+        self.view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
+        tableView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+    }
+
+    private func isModal() -> Bool {
+        if presentingViewController != nil {
+            return true
+        }
+        if navigationController?.presentingViewController?.presentedViewController == navigationController {
+            return true
+        }
+        if tabBarController?.presentingViewController is UITabBarController {
+            return true
+        }
+        return false
+    }
+
+    @objc private func close() {
+        if isModal() {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
+    }
+}
+
+// MARK: - Table view data source
+extension UIObjectTableViewController: UITableViewDelegate, UITableViewDataSource {
+
+    open func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return uiObject!.propertiesDict().count
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return uiObject.propertiesDict().count
     }
 
-    override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UIObjectTableViewCell", for: indexPath) as? UIObjectTableViewCell
             else {
                 return UITableViewCell()
         }
 
-        cell.propertyNameLabel.text = uiObject!.propertyNames()[indexPath.row]
-        cell.propertyValueLabel.text = uiObject!.propertyValues()[indexPath.row]
+        cell.propertyNameLabel.text = uiObject.propertyNames()[indexPath.row]
+        cell.propertyValueLabel.text = uiObject.propertyValues()[indexPath.row]
         return cell
     }
 }
