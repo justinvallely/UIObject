@@ -1,0 +1,16 @@
+PODS:
+  - UIObject (0.0.1)
+
+DEPENDENCIES:
+  - UIObject (from `../`)
+
+EXTERNAL SOURCES:
+  UIObject:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  UIObject: ac609bc3f64f13ba79b3f55fdc78204eaa8bf679
+
+PODFILE CHECKSUM: 9dc6544612ebd582aaf95aa7a1f05a0d492d85fb
+
+COCOAPODS: 1.5.3

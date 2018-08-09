@@ -1,42 +1,30 @@
-#
-# Be sure to run `pod lib lint UIObject.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
-  s.name             = 'UIObject'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of UIObject.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.name          = "UIObject"
+  s.version       = "0.0.1"
+  s.summary       = "An easy way to display all the properties and values of an Object."
+  s.swift_version = "4.1"
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description   = <<-DESC
+Quickly render a table view of all the properies in any struct or class within your app. Add and remove properties as needed and the view
+automatically adjusts. This is a great way to visualize model data that's been parsed from a JSON object. Present it to your users or use it
+for debugging purposes.
+                    DESC
 
-  s.homepage         = 'https://github.com/justinvallely/UIObject'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'justinvallely' => 'justin.vallely@ibotta.com' }
-  s.source           = { :git => 'https://github.com/justinvallely/UIObject.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.homepage      = "http://www.justinvallely.com"
+# s.screenshots   = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
-  s.ios.deployment_target = '8.0'
+  s.license       = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
 
-  s.source_files = 'UIObject/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'UIObject' => ['UIObject/Assets/*.png']
-  # }
+  s.author        = { "Justin Vallely" => "justinvallely@gmail.com" }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.platform      = :ios, "9.0"
+
+  s.source        = { :git => "https://github.com/justinvallely/UIObject.git", :tag => "#{s.version}" }
+
+  s.source_files  = "UIObject/Classes", "UIObject/Classes/**/*"
+  s.exclude_files = "UIObject/Classes/Exclude"
+
+  s.frameworks    = "UIKit", "Foundation"
+
 end
