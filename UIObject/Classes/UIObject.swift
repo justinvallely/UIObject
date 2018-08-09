@@ -6,13 +6,13 @@
 //  Copyright © 2018 JustinVallely. All rights reserved.
 //
 
-protocol UIObject {
+public protocol UIObject {
     func propertyNames() -> [String]
     func propertyValues() -> [String]
     func propertiesDict() -> [String: String?]
 }
 
-extension UIObject {
+public extension UIObject {
     func propertyNames() -> [String] {
         return Mirror(reflecting: self).children.compactMap { $0.label }
     }
