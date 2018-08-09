@@ -11,7 +11,7 @@ automatically adjusts. This is a great way to visualize model data that's been p
 for debugging purposes.
                     DESC
 
-  s.homepage      = "http://www.justinvallely.com"
+  s.homepage      = "https://github.com/justinvallely"
 # s.screenshots   = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
   s.license       = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
@@ -23,8 +23,6 @@ for debugging purposes.
   s.source        = { :git => "https://github.com/justinvallely/UIObject.git", :tag => "#{s.version}" }
 
   s.source_files  = "UIObject/Classes", "UIObject/Classes/**/*"
-  s.exclude_files = "UIObject/Classes/Exclude"
-
   s.frameworks    = "UIKit", "Foundation"
 
 end

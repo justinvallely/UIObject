@@ -9,9 +9,10 @@
 import UIObject
 
 class Person: UIObject {
-    var name: String = "William S. Preston Esq."
+    let name: String = "William S. Preston Esq."
+    var age: Int = 35
     var awesome: Bool = true
     var favoriteFoods: [String] = ["Pizza", "Ice Cream"]
     var children: [String]? = nil
-    let age: Int? = 35
+    var car: String? = "Jeep"
 }

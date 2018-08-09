@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class UIObjectTableViewController: UITableViewController {
+open class UIObjectTableViewController: UITableViewController {
 
-    public var uiObject: UIObject?
+    open var uiObject: UIObject!
 
     public init(uiObject: UIObject) {
         super.init(style: .plain)
@@ -25,30 +25,30 @@ public class UIObjectTableViewController: UITableViewController {
         assertionFailure("not implemented")
     }
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UIObjectTableViewCell.self, forCellReuseIdentifier: "UIObjectTableViewCell")
-        navigationItem.title = "\(uiObject!.self)"
+        navigationItem.title = "\(uiObject.self)"
     }
 
     // MARK: - Table view data source
 
-    override public func numberOfSections(in tableView: UITableView) -> Int {
+    override open func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return uiObject!.propertiesDict().count
+    override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return uiObject.propertiesDict().count
     }
 
-    override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UIObjectTableViewCell", for: indexPath) as? UIObjectTableViewCell
             else {
                 return UITableViewCell()
         }
 
-        cell.propertyNameLabel.text = uiObject!.propertyNames()[indexPath.row]
-        cell.propertyValueLabel.text = uiObject!.propertyValues()[indexPath.row]
+        cell.propertyNameLabel.text = uiObject.propertyNames()[indexPath.row]
+        cell.propertyValueLabel.text = uiObject.propertyValues()[indexPath.row]
         return cell
     }
 }
