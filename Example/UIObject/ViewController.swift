@@ -24,7 +24,13 @@ final class ViewController: UIViewController {
 
     @IBAction func buttonAction(_ sender: Any) {
         let vc = UIObjectTableViewController(uiObject: person)
+
+        // push the view onto the nav stack
         self.navigationController?.pushViewController(vc, animated: true)
+
+        // present the view modally
+//        let navBarOnModal: UINavigationController = UINavigationController(rootViewController: vc)
+//        self.present(navBarOnModal, animated: true)
     }
 }
 
