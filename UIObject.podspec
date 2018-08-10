@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "UIObject"
-  s.version       = "0.0.1"
+  s.version       = "0.2.0"
   s.summary       = "An easy way to display all the properties and values of an Object."
   s.swift_version = "4.1"
 

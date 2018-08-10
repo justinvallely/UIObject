@@ -1,5 +1,5 @@
 //
-//  UIObjectTableViewController.swift
+//  UIObjectViewController.swift
 //  UIObject
 //
 //  Created by Justin Vallely on 8/7/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class UIObjectTableViewController: UIViewController {
+open class UIObjectViewController: UIViewController {
 
     open var uiObject: UIObject!
     open var tableView = UITableView()
@@ -34,7 +34,7 @@ open class UIObjectTableViewController: UIViewController {
     }
 
     private func configureNavBar() {
-        if isModal() {
+        if self.isModal() {
             let closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.stop, target: self, action: #selector(close))
             navigationItem.leftBarButtonItem = closeButton
         }
@@ -57,21 +57,8 @@ open class UIObjectTableViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
     }
 
-    private func isModal() -> Bool {
-        if presentingViewController != nil {
-            return true
-        }
-        if navigationController?.presentingViewController?.presentedViewController == navigationController {
-            return true
-        }
-        if tabBarController?.presentingViewController is UITabBarController {
-            return true
-        }
-        return false
-    }
-
     @objc private func close() {
-        if isModal() {
+        if self.isModal() {
             self.dismiss(animated: true, completion: nil)
         } else {
             navigationController?.popViewController(animated: true)
@@ -80,7 +67,7 @@ open class UIObjectTableViewController: UIViewController {
 }
 
 // MARK: - Table view data source
-extension UIObjectTableViewController: UITableViewDelegate, UITableViewDataSource {
+extension UIObjectViewController: UITableViewDelegate, UITableViewDataSource {
 
     open func numberOfSections(in tableView: UITableView) -> Int {
         return 1

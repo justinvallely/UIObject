@@ -20,6 +20,9 @@
 		B6DFB578F7B5F528E45F2BA5D8F68920 /* Pods-UIObject_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1160E0A4C0A4808013C4E45940290 /* Pods-UIObject_Example-dummy.m */; };
 		C7D63769D8A24731C6190767D1A9586D /* Pods-UIObject_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4109CA3FA560D488DD05A9582B2A7C70 /* Pods-UIObject_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAEBB33A2F037C476771DF66EC13F457 /* UIObject-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C5F11E35F01DBB98A46102A3690B7294 /* UIObject-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB2ADE44211E4AB9009C0B4E /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2ADE43211E4AB9009C0B4E /* UIViewController+extension.swift */; };
+		EB2ADE45211E4AB9009C0B4E /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2ADE43211E4AB9009C0B4E /* UIViewController+extension.swift */; };
+		EB2ADE46211E4AB9009C0B4E /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2ADE43211E4AB9009C0B4E /* UIViewController+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,7 @@
 		D8E1D0810C42174F50DEF74E4C79882C /* UIObject-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIObject-dummy.m"; sourceTree = "<group>"; };
 		D92786DED9AD7C7286F55D8C33A9D978 /* UIObject-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIObject-prefix.pch"; sourceTree = "<group>"; };
 		DBC6AE9E5D1EE94C409C2F9BD8F3F046 /* Pods-UIObject_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UIObject_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		EB2ADE43211E4AB9009C0B4E /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+extension.swift"; path = "UIObject/Classes/UIViewController+extension.swift"; sourceTree = "<group>"; };
 		EF5815A25E9EBC1075467AA30F2B4970 /* Pods-UIObject_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UIObject_Example.modulemap"; sourceTree = "<group>"; };
 		F5CBFFB8A0F9FE0963C49781AB414528 /* UIObject.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = UIObject.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FCA9E6A1088B93821672B0820345AE1E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				156181BD35277A60B1C03A8092BD2FED /* UIObject.swift */,
 				742E49A7646CEC61716244492748BF97 /* UIObjectTableViewCell.swift */,
 				4ED1A8CD0AD5A63FF0D31C934B0E4C56 /* UIObjectTableViewController.swift */,
+				EB2ADE43211E4AB9009C0B4E /* UIViewController+extension.swift */,
 				653C17E5D39C84020B77BCC3492F461F /* Pod */,
 				DE40687A959A492CC44B28A08DE485A1 /* Support Files */,
 			);
@@ -328,6 +333,14 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0940;
+				TargetAttributes = {
+					D4FEA96BC23CDCD40B4D34DC5E7EDA63 = {
+						LastSwiftMigration = 0940;
+					};
+					F9163836856BE5A72B32B1C0756F7F34 = {
+						LastSwiftMigration = 0940;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -353,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB2ADE44211E4AB9009C0B4E /* UIViewController+extension.swift in Sources */,
 				B6DFB578F7B5F528E45F2BA5D8F68920 /* Pods-UIObject_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB2ADE45211E4AB9009C0B4E /* UIViewController+extension.swift in Sources */,
 				2A1C0C49D98E18A8EAEF06C16D6D5F13 /* Pods-UIObject_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +386,7 @@
 			files = (
 				8C62B9057C4F0DD50387178ACDCECD68 /* UIObject-dummy.m in Sources */,
 				3DEE7008A9884506A30CBF7D5F45372E /* UIObject.swift in Sources */,
+				EB2ADE46211E4AB9009C0B4E /* UIViewController+extension.swift in Sources */,
 				98BE78AAA4A6EC2DE62FEB4DC5BAEF6B /* UIObjectTableViewCell.swift in Sources */,
 				24C571C002F6975BA8930C550EE7AB2D /* UIObjectTableViewController.swift in Sources */,
 			);
@@ -399,6 +415,7 @@
 			baseConfigurationReference = 021F4DE96C45DE1CB1314692BDDC234F /* Pods-UIObject_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -422,6 +439,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -497,6 +515,7 @@
 			baseConfigurationReference = A69355974C53B7D79ADC2404DB1CE8B2 /* Pods-UIObject_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -519,6 +538,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -530,6 +551,7 @@
 			baseConfigurationReference = 65468E437E860D56287B7E26D4057181 /* Pods-UIObject_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -552,6 +574,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -629,6 +652,7 @@
 			baseConfigurationReference = 9CED274FEFE240DD292DA46D321BB90A /* Pods-UIObject_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -653,6 +677,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
