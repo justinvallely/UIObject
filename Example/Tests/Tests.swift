@@ -2,6 +2,8 @@ import XCTest
 import UIObject
 
 class Tests: XCTestCase {
+
+    var testObject: UIObject = Person()
     
     override func setUp() {
         super.setUp()
@@ -13,15 +15,33 @@ class Tests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testPropertyCounts() {
+        let namesCount = testObject.propertyNames().count
+        let valuesCount = testObject.propertyValues().count
+        let dictCount = testObject.propertiesDict().count
+
+        XCTAssert(namesCount == valuesCount)
+        XCTAssert(namesCount == dictCount)
+        XCTAssert(valuesCount == dictCount)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure() {
-            // Put the code you want to measure the time of here.
+
+    func testPropertyValuePairing() {
+        let names = testObject.propertyNames()
+        let values = testObject.propertyValues()
+        let dict = testObject.propertiesDict()
+
+        for (key, value) in dict {
+            guard let propertyNameIndex = names.index(of: key) else {
+                XCTFail("Could not find index of key: \(key)")
+                return
+            }
+
+            if let value = value {
+                XCTAssert(values[propertyNameIndex] == value)
+            } else {
+                XCTAssertNil(values[propertyNameIndex])
+            }
+
         }
     }
     
