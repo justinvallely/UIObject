@@ -6,7 +6,6 @@
 //  Copyright (c) 2018 justinvallely. All rights reserved.
 //
 
-import UIKit
 import UIObject
 
 final class ViewController: UIViewController {
@@ -17,14 +16,14 @@ final class ViewController: UIViewController {
 
     @IBAction func buttonAction(_ sender: Any) {
 
-        let vc = UIObjectViewController(uiObject: Person())
+        let personViewController = UIObjectViewController(uiObject: Person())
 
         /* PUSH the view onto the nav stack */
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(personViewController, animated: true)
 
         /* PRESENT the view modally */
-//        let navBarOnModal: UINavigationController = UINavigationController(rootViewController: vc)
-//        self.present(navBarOnModal, animated: true)
+//        let modalViewWithNavigationBar: UINavigationController = UINavigationController(rootViewController: personViewController)
+//        self.present(modalViewWithNavigationBar, animated: true)
     }
 }
 
