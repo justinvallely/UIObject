@@ -11,7 +11,7 @@ and the view automatically adjusts. This is a great way to visualize model data 
 enough to use for debugging, yet beautiful enough to present to your users.
                     DESC
 
-  s.homepage      = "https://github.com/justinvallely"
+  s.homepage      = "https://github.com/justinvallely/UIObject"
 # s.screenshots   = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
   s.license       = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
